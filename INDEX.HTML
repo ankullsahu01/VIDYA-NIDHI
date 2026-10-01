@@ -1,0 +1,2399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VIDYA NIDHI | Smart Learning Campus</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --green:#16856b;
+    --green-dark:#0b654f;
+    --green-light:#e8f6f1;
+    --orange:#e99a3d;
+    --dark:#10231e;
+    --text:#31413c;
+    --muted:#71807b;
+    --white:#ffffff;
+    --bg:#f7faf9;
+    --border:#e3ebe8;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Inter","Noto Sans Devanagari",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+button,
+a,
+input,
+select,
+textarea{
+    font-family:inherit;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+    width:100%;
+    height:84px;
+    background:#fff;
+    border-bottom:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.header-inner{
+    width:100%;
+    padding:0 5.5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.brand-logo{
+    width:50px;
+    height:50px;
+    border:1px solid var(--border);
+    border-radius:15px;
+    object-fit:contain;
+    background:#fff;
+    padding:4px;
+}
+
+.brand-text h2{
+    font-size:19px;
+    font-weight:900;
+    letter-spacing:.3px;
+    color:var(--green-dark);
+}
+
+.brand-text span{
+    display:block;
+    margin-top:4px;
+    font-size:10px;
+    letter-spacing:1.7px;
+    color:#89948f;
+    font-weight:700;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.session-pill{
+    background:var(--green-light);
+    border-radius:30px;
+    padding:9px 10px 9px 16px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:var(--green-dark);
+    font-size:12px;
+    font-weight:800;
+    white-space:nowrap;
+}
+
+.new-pill{
+    background:var(--orange);
+    color:#fff;
+    padding:5px 9px;
+    border-radius:20px;
+    font-size:9px;
+    font-weight:900;
+}
+
+.menu-btn{
+    border:0;
+    background:var(--dark);
+    color:#fff;
+    padding:13px 18px;
+    border-radius:14px;
+    font-weight:800;
+    font-size:12px;
+    cursor:pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    width:100%;
+    min-height:690px;
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 82% 35%, rgba(22,133,107,.13), transparent 32%),
+        radial-gradient(circle at 7% 90%, rgba(233,154,61,.08), transparent 25%),
+        linear-gradient(100deg,#ffffff 0%,#fbfdfc 45%,#eef8f5 100%);
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    border:1px solid rgba(22,133,107,.08);
+    border-radius:50%;
+    right:-180px;
+    top:-170px;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:420px;
+    height:420px;
+    border:1px solid rgba(22,133,107,.07);
+    border-radius:50%;
+    right:30px;
+    bottom:-310px;
+}
+
+/* IMPORTANT:
+   Full width layout instead of narrow centered container
+*/
+
+.hero-inner{
+    width:100%;
+    min-height:690px;
+    padding:90px 5.5% 70px;
+    display:grid;
+    grid-template-columns:minmax(0,1.02fr) minmax(500px,.98fr);
+    align-items:center;
+    gap:40px;
+    position:relative;
+    z-index:2;
+}
+
+/* LEFT */
+
+.hero-content{
+    max-width:760px;
+}
+
+.hero-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:10px 14px;
+    border:1px solid var(--border);
+    border-radius:30px;
+    background:#fff;
+    color:var(--green-dark);
+    font-size:11px;
+    font-weight:800;
+    box-shadow:0 8px 25px rgba(16,35,30,.04);
+    margin-bottom:25px;
+}
+
+.hero-dot{
+    width:9px;
+    height:9px;
+    background:#2ac58f;
+    border-radius:50%;
+    box-shadow:0 0 0 5px rgba(42,197,143,.13);
+}
+
+.hero-title{
+    font-size:clamp(58px,5.4vw,82px);
+    line-height:.88;
+    letter-spacing:-4px;
+    font-weight:900;
+    color:var(--dark);
+    margin-bottom:28px;
+}
+
+.hero-title span{
+    color:var(--green);
+    display:block;
+}
+
+.hero-description{
+    max-width:700px;
+    font-family:"Noto Sans Devanagari","Inter",sans-serif;
+    font-size:18px;
+    line-height:1.9;
+    color:#60706a;
+    margin-bottom:30px;
+}
+
+.hero-actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.primary-btn,
+.secondary-btn{
+    min-height:52px;
+    padding:0 21px;
+    border-radius:14px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.25s ease;
+}
+
+.primary-btn{
+    background:var(--green);
+    color:#fff;
+    box-shadow:0 14px 28px rgba(22,133,107,.18);
+}
+
+.primary-btn:hover{
+    background:var(--green-dark);
+    transform:translateY(-2px);
+}
+
+.secondary-btn{
+    background:#fff;
+    border:1px solid var(--border);
+    color:var(--dark);
+}
+
+.secondary-btn:hover{
+    border-color:var(--green);
+    color:var(--green);
+}
+
+/* RIGHT VISUAL */
+
+.hero-visual{
+    position:relative;
+    min-height:510px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* BIG LOGO CIRCLE */
+
+.logo-circle{
+    width:min(360px,32vw);
+    height:min(360px,32vw);
+    min-width:290px;
+    min-height:290px;
+
+    border-radius:50%;
+    background:#fff;
+
+    border:10px solid rgba(255,255,255,.7);
+
+    box-shadow:
+        0 20px 60px rgba(16,35,30,.09),
+        0 0 0 1px rgba(22,133,107,.08);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+    z-index:2;
+}
+
+.logo-circle img{
+    width:72%;
+    height:72%;
+    object-fit:contain;
+}
+
+/* SESSION CARD */
+
+.floating-card{
+    position:absolute;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:19px;
+    padding:18px;
+    box-shadow:0 18px 45px rgba(16,35,30,.09);
+    z-index:5;
+}
+
+.session-card{
+    width:220px;
+    right:2%;
+    top:18px;
+}
+
+.notification-card{
+    width:215px;
+    left:0;
+    bottom:30px;
+}
+
+.card-icon{
+    width:38px;
+    height:38px;
+    border-radius:12px;
+    background:var(--green-light);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:19px;
+    margin-bottom:13px;
+}
+
+.card-title{
+    color:var(--dark);
+    font-size:14px;
+    font-weight:800;
+    margin-bottom:8px;
+}
+
+.card-sub{
+    font-size:10px;
+    color:#7c8985;
+    line-height:1.6;
+}
+
+.card-new{
+    display:inline-block;
+    margin-left:5px;
+    padding:4px 7px;
+    border-radius:12px;
+    background:#fff1df;
+    color:#c4771d;
+    font-size:8px;
+    font-weight:900;
+}
+
+/* =========================
+   COMMON SECTION
+========================= */
+
+.section{
+    width:100%;
+    padding:85px 5.5%;
+}
+
+.section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:35px;
+}
+
+.section-label{
+    color:var(--green);
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:1.5px;
+    margin-bottom:8px;
+}
+
+.section-title{
+    color:var(--dark);
+    font-size:34px;
+    font-weight:900;
+    letter-spacing:-1px;
+}
+
+.section-desc{
+    max-width:520px;
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.7;
+}
+
+/* =========================
+   QUICK ACCESS
+========================= */
+
+.quick-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+.quick-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:25px;
+    transition:.25s ease;
+}
+
+.quick-card:hover{
+    transform:translateY(-4px);
+    border-color:#c7ddd6;
+    box-shadow:0 15px 35px rgba(16,35,30,.07);
+}
+
+.quick-icon{
+    width:46px;
+    height:46px;
+    border-radius:14px;
+    background:var(--green-light);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    margin-bottom:18px;
+}
+
+.quick-card h3{
+    font-size:16px;
+    color:var(--dark);
+    margin-bottom:7px;
+}
+
+.quick-card p{
+    font-size:12px;
+    color:var(--muted);
+    line-height:1.6;
+}
+
+/* =========================
+   UPDATE
+========================= */
+
+.update-box{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:28px;
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.update-icon{
+    width:52px;
+    height:52px;
+    flex:none;
+    border-radius:15px;
+    background:var(--green-light);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:23px;
+}
+
+.update-box h3{
+    color:var(--dark);
+    font-size:16px;
+    margin-bottom:5px;
+}
+
+.update-box p{
+    color:var(--muted);
+    font-size:12px;
+}
+
+/* =========================
+   NEWS
+========================= */
+
+.news-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.news-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:24px;
+}
+
+.news-date{
+    font-size:10px;
+    color:var(--green);
+    font-weight:900;
+    letter-spacing:1px;
+    margin-bottom:15px;
+}
+
+.news-card h3{
+    color:var(--dark);
+    font-size:17px;
+    margin-bottom:10px;
+}
+
+.news-card p{
+    font-size:12px;
+    line-height:1.7;
+    color:var(--muted);
+}
+
+.news-btn{
+    margin-top:20px;
+    border:0;
+    background:var(--green-light);
+    color:var(--green-dark);
+    padding:10px 14px;
+    border-radius:10px;
+    font-size:10px;
+    font-weight:800;
+    cursor:pointer;
+}
+
+/* =========================
+   PRACTICE
+========================= */
+
+.practice-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.practice-card{
+    background:#fff;
+    border:1px solid var(--border);
+    padding:22px;
+    border-radius:18px;
+}
+
+.practice-card h3{
+    font-size:15px;
+    color:var(--dark);
+    margin-bottom:8px;
+}
+
+.practice-card p{
+    font-size:11px;
+    color:var(--muted);
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.service-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:28px;
+}
+
+.service-card h3{
+    font-size:17px;
+    color:var(--dark);
+    margin-bottom:9px;
+}
+
+.service-card p{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.service-link{
+    display:inline-block;
+    padding:10px 14px;
+    border-radius:10px;
+    background:var(--green-light);
+    color:var(--green-dark);
+    font-size:10px;
+    font-weight:800;
+}
+
+/* =========================
+   KNOWLEDGE
+========================= */
+
+.knowledge-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.knowledge-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:22px;
+}
+
+.knowledge-card h3{
+    color:var(--dark);
+    font-size:15px;
+    margin-bottom:7px;
+}
+
+.knowledge-card p{
+    color:var(--muted);
+    font-size:11px;
+}
+
+/* =========================
+   JOURNEY
+========================= */
+
+.journey{
+    background:#fff;
+}
+
+.timeline{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.timeline-card{
+    padding:25px;
+    border:1px solid var(--border);
+    border-radius:18px;
+    background:#fbfdfc;
+}
+
+.timeline-number{
+    font-size:30px;
+    color:var(--green);
+    font-weight:900;
+    margin-bottom:15px;
+}
+
+.timeline-card h3{
+    color:var(--dark);
+    font-size:16px;
+    margin-bottom:8px;
+}
+
+.timeline-card p{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.7;
+}
+
+/* =========================
+   FOUNDER
+========================= */
+
+.founder-box{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:45px;
+    align-items:center;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:25px;
+    padding:35px;
+}
+
+.founder-image{
+    width:220px;
+    height:220px;
+    border-radius:25px;
+    object-fit:cover;
+    background:var(--green-light);
+}
+
+.founder-box h2{
+    font-size:32px;
+    color:var(--dark);
+    margin-bottom:8px;
+}
+
+.founder-role{
+    color:var(--green);
+    font-size:12px;
+    font-weight:800;
+    margin-bottom:18px;
+}
+
+.founder-box p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.8;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    background:#eef8f5;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:40px;
+}
+
+.contact-info h2{
+    font-size:35px;
+    color:var(--dark);
+    margin-bottom:15px;
+}
+
+.contact-info p{
+    color:var(--muted);
+    line-height:1.8;
+    font-size:14px;
+}
+
+.contact-details{
+    margin-top:25px;
+}
+
+.contact-detail{
+    margin-bottom:14px;
+    color:var(--text);
+    font-size:13px;
+}
+
+.contact-form{
+    background:#fff;
+    padding:30px;
+    border-radius:22px;
+    border:1px solid var(--border);
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.form-group.full{
+    grid-column:1/-1;
+}
+
+.form-group label{
+    display:block;
+    font-size:10px;
+    font-weight:800;
+    margin-bottom:7px;
+    color:var(--dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:12px;
+    outline:none;
+    font-size:12px;
+    background:#fff;
+}
+
+.form-group textarea{
+    min-height:110px;
+    resize:vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:var(--green);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:var(--dark);
+    color:#fff;
+    padding:40px 5.5%;
+}
+
+.footer-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.footer-brand{
+    font-weight:900;
+    font-size:17px;
+}
+
+.footer-brand span{
+    display:block;
+    margin-top:5px;
+    color:#9aa9a4;
+    font-size:10px;
+    letter-spacing:1.4px;
+}
+
+.footer-copy{
+    color:#9aa9a4;
+    font-size:11px;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(16,35,30,.55);
+    backdrop-filter:blur(8px);
+    z-index:2000;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-box{
+    width:min(650px,100%);
+    max-height:90vh;
+    overflow:auto;
+    background:#fff;
+    border-radius:24px;
+    padding:30px;
+    position:relative;
+}
+
+.close-btn{
+    position:absolute;
+    right:18px;
+    top:18px;
+    width:35px;
+    height:35px;
+    border:0;
+    border-radius:50%;
+    background:#f1f5f3;
+    cursor:pointer;
+    font-size:17px;
+}
+
+.modal-box h2{
+    color:var(--dark);
+    margin-bottom:12px;
+}
+
+.modal-box p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.8;
+}
+
+.menu-list{
+    display:grid;
+    gap:10px;
+    margin-top:25px;
+}
+
+.menu-link{
+    display:block;
+    padding:16px;
+    border-radius:13px;
+    background:#f5faf8;
+    color:var(--dark);
+    font-weight:800;
+    font-size:13px;
+}
+
+.menu-link:hover{
+    background:var(--green-light);
+    color:var(--green-dark);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+    .header-inner,
+    .section,
+    footer{
+        padding-left:4%;
+        padding-right:4%;
+    }
+
+    .hero-inner{
+        padding-left:4%;
+        padding-right:4%;
+        grid-template-columns:1fr 1fr;
+    }
+
+    .hero-title{
+        font-size:62px;
+    }
+
+    .logo-circle{
+        width:300px;
+        height:300px;
+    }
+
+    .session-card{
+        right:-5px;
+    }
+
+    .notification-card{
+        left:-5px;
+    }
+}
+
+@media(max-width:850px){
+
+    .hero-inner{
+        grid-template-columns:1fr;
+        padding-top:70px;
+    }
+
+    .hero-content{
+        max-width:850px;
+    }
+
+    .hero-visual{
+        min-height:430px;
+    }
+
+    .hero-title{
+        font-size:60px;
+    }
+
+    .quick-grid,
+    .practice-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .news-grid,
+    .services-grid,
+    .knowledge-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .timeline{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:650px){
+
+    .header{
+        height:72px;
+    }
+
+    .header-inner{
+        padding:0 18px;
+    }
+
+    .brand-logo{
+        width:42px;
+        height:42px;
+    }
+
+    .brand-text h2{
+        font-size:16px;
+    }
+
+    .brand-text span{
+        font-size:8px;
+    }
+
+    .session-pill{
+        display:none;
+    }
+
+    .menu-btn{
+        padding:11px 14px;
+    }
+
+    .hero{
+        min-height:auto;
+    }
+
+    .hero-inner{
+        padding:60px 20px 50px;
+        display:block;
+    }
+
+    .hero-tag{
+        font-size:9px;
+    }
+
+    .hero-title{
+        font-size:50px;
+        letter-spacing:-2.5px;
+        line-height:.92;
+    }
+
+    .hero-description{
+        font-size:14px;
+        line-height:1.8;
+    }
+
+    .hero-actions{
+        flex-wrap:wrap;
+    }
+
+    .hero-visual{
+        min-height:390px;
+        margin-top:25px;
+    }
+
+    .logo-circle{
+        width:250px;
+        height:250px;
+        min-width:250px;
+        min-height:250px;
+    }
+
+    .session-card{
+        width:175px;
+        right:0;
+        top:0;
+        padding:14px;
+    }
+
+    .notification-card{
+        width:175px;
+        left:0;
+        bottom:0;
+        padding:14px;
+    }
+
+    .section{
+        padding:60px 20px;
+    }
+
+    .section-title{
+        font-size:28px;
+    }
+
+    .section-head{
+        display:block;
+    }
+
+    .section-desc{
+        margin-top:10px;
+    }
+
+    .quick-grid,
+    .practice-grid,
+    .news-grid,
+    .services-grid,
+    .knowledge-grid,
+    .timeline{
+        grid-template-columns:1fr;
+    }
+
+    .founder-box{
+        grid-template-columns:1fr;
+        padding:25px;
+    }
+
+    .founder-image{
+        width:170px;
+        height:170px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-group.full{
+        grid-column:auto;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="header-inner">
+
+        <a href="#" class="brand">
+
+            <img
+                class="brand-logo"
+                src="https://drive.google.com/thumbnail?id=1jVQamaVZKzAZ7DTHRWI-rH93SbeETbwf&sz=w1000"
+                alt="VIDYA NIDHI Logo"
+            >
+
+            <div class="brand-text">
+                <h2>VIDYA NIDHI</h2>
+                <span>SMART LEARNING CAMPUS</span>
+            </div>
+
+        </a>
+
+        <div class="header-right">
+
+            <div class="session-pill">
+                SESSION 2026–27
+                <span class="new-pill">NEW</span>
+            </div>
+
+            <button class="menu-btn" onclick="openPopup('menuModal')">
+                ☰ MENU
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-inner">
+
+        <!-- LEFT CONTENT -->
+
+        <div class="hero-content">
+
+            <div class="hero-tag">
+                <span class="hero-dot"></span>
+                SESSION 2026–27 • SMART LEARNING
+            </div>
+
+            <h1 class="hero-title">
+                LEARN.
+                <span>PRACTICE.</span>
+                PROGRESS.
+            </h1>
+
+            <p class="hero-description">
+                विद्या निधि एक ऐसा learning platform है जहाँ concepts,
+                practice, tests और results को एक ही जगह सरल और व्यवस्थित
+                तरीके से उपलब्ध कराया जाता है।
+            </p>
+
+            <div class="hero-actions">
+
+                <a
+                    href="https://sites.google.com/view/nidhinotes-com/notes"
+                    class="primary-btn"
+                >
+                    START LEARNING →
+                </a>
+
+                <button
+                    class="secondary-btn"
+                    onclick="openPopup('journeyModal')"
+                >
+                    OUR JOURNEY
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT VISUAL -->
+
+        <div class="hero-visual">
+
+            <!-- SESSION CARD -->
+
+            <div class="floating-card session-card">
+
+                <div class="card-icon">
+                    📚
+                </div>
+
+                <div class="card-title">
+                    2026–27 SESSION
+                </div>
+
+                <div class="card-sub">
+                    New Learning Journey
+                    <span class="card-new">NEW SESSION</span>
+                </div>
+
+            </div>
+
+
+            <!-- MAIN LOGO -->
+
+            <div class="logo-circle">
+
+                <img
+                    src="https://drive.google.com/thumbnail?id=1jVQamaVZKzAZ7DTHRWI-rH93SbeETbwf&sz=w1000"
+                    alt="Vidya Nidhi"
+                >
+
+            </div>
+
+
+            <!-- NOTIFICATION -->
+
+            <div class="floating-card notification-card">
+
+                <div class="card-icon">
+                    📝
+                </div>
+
+                <div class="card-title">
+                    NO NEW NOTIFICATION
+                </div>
+
+                <div class="card-sub">
+                    Stay tuned
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= QUICK ACCESS ================= -->
+
+<section class="section">
+
+    <div class="section-head">
+
+        <div>
+            <div class="section-label">QUICK ACCESS</div>
+            <h2 class="section-title">Everything in one place</h2>
+        </div>
+
+        <p class="section-desc">
+            Notes, tests, results और examinations को आसानी से access करें।
+        </p>
+
+    </div>
+
+
+    <div class="quick-grid">
+
+        <a
+            href="https://sites.google.com/view/nidhinotes-com/notes"
+            class="quick-card"
+        >
+
+            <div class="quick-icon">📚</div>
+
+            <h3>Study Notes</h3>
+
+            <p>
+                Chapter-wise notes और learning material.
+            </p>
+
+        </a>
+
+
+        <a
+            href="https://sites.google.com/view/nidhinotes-com/test-paper"
+            class="quick-card"
+        >
+
+            <div class="quick-icon">📝</div>
+
+            <h3>Test Papers</h3>
+
+            <p>
+                Practice और examination papers.
+            </p>
+
+        </a>
+
+
+        <a
+            href="https://sites.google.com/view/nidhinotes-com/result"
+            class="quick-card"
+        >
+
+            <div class="quick-icon">📊</div>
+
+            <h3>Results</h3>
+
+            <p>
+                Student examination results.
+            </p>
+
+        </a>
+
+
+        <a
+            href="https://sites.google.com/view/nidhinotes-com/exams"
+            class="quick-card"
+        >
+
+            <div class="quick-icon">🎓</div>
+
+            <h3>Examinations</h3>
+
+            <p>
+                Upcoming और previous examinations.
+            </p>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LATEST UPDATE ================= -->
+
+<section class="section" style="padding-top:20px;">
+
+    <div class="section-head">
+
+        <div>
+            <div class="section-label">LATEST UPDATE</div>
+            <h2 class="section-title">Stay updated</h2>
+        </div>
+
+    </div>
+
+    <div class="update-box">
+
+        <div class="update-icon">📢</div>
+
+        <div>
+            <h3>NO NEW NOTIFICATION</h3>
+            <p>
+                फिलहाल कोई नई notification उपलब्ध नहीं है।
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NEWS ================= -->
+
+<section class="section">
+
+    <div class="section-head">
+
+        <div>
+            <div class="section-label">CAMPUS NEWS</div>
+            <h2 class="section-title">Latest News</h2>
+        </div>
+
+    </div>
+
+
+    <div class="news-grid">
+
+        <div class="news-card">
+
+            <div class="news-date">
+                SESSION 2026–27
+            </div>
+
+            <h3>
+                NO NEW NOTIFICATION
+            </h3>
+
+            <p>
+                Stay connected with VIDYA NIDHI for upcoming updates.
+            </p>
+
+            <button
+                class="news-btn"
+                onclick="openPopup('news1Modal')"
+            >
+                VIEW DETAILS
+            </button>
+
+        </div>
+
+
+        <div class="news-card">
+
+            <div class="news-date">
+                EXAMINATION
+            </div>
+
+            <h3>
+                Examination Update
+            </h3>
+
+            <p>
+                Examination related information will be published here.
+            </p>
+
+            <button
+                class="news-btn"
+                onclick="openPopup('news2Modal')"
+            >
+                VIEW DETAILS
+            </button>
+
+        </div>
+
+
+        <div class="news-card">
+
+            <div class="news-date">
+                STUDENT SERVICES
+            </div>
+
+            <h3>
+                Student Verification
+            </h3>
+
+            <p>
+                Verify student details through the official portal.
+            </p>
+
+            <button
+                class="news-btn"
+                onclick="openPopup('news3Modal')"
+            >
+                VIEW DETAILS
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PRACTICE ZONE ================= -->
+
+<section class="section">
+
+    <div class="section-head">
+
+        <div>
+            <div class="section-label">PRACTICE ZONE</div>
+            <h2 class="section-title">Practice & Improve</h2>
+        </div>
+
+        <p class="section-desc">
+            Class 5–6 students के लिए important subjects.
+        </p>
+
+    </div>
+
+
+    <div class="practice-grid">
+
+        <div class="practice-card">
+            <h3>➗ Mathematics</h3>
+            <p>Numbers, Geometry, Fractions & more.</p>
+        </div>
+
+        <div class="practice-card">
+            <h3>🔬 Science</h3>
+            <p>Concepts, diagrams and important questions.</p>
+        </div>
+
+        <div class="practice-card">
+            <h3>🌍 Social Science</h3>
+            <p>History, Geography and Civics.</p>
+        </div>
+
+        <div class="practice-card">
+            <h3>📖 English</h3>
+            <p>Grammar, vocabulary and comprehension.</p>
+        </div>
+
+        <div class="practice-card">
+            <h3>🪔 Hindi</h3>
+            <p>Vyakaran, literature and vocabulary.</p>
+        </div>
+
+        <div class="practice-card">
+            <h3>🇮🇳 GK</h3>
+            <p>India, Bihar and general knowledge.</p>
+        </div>
+
+        <div class="practice-card">
+            <h3>💻 Computer</h3>
+            <p>Basic computer concepts and technology.</p>
+        </div>
+
+        <div class="practice-card">
+            <h3>🧠 Reasoning</h3>
+            <p>Logical thinking and aptitude practice.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="section">
+
+    <div class="section-head">
+
+        <div>
+            <div class="section-label">STUDENT SERVICES</div>
+            <h2 class="section-title">Useful Portals</h2>
+        </div>
+
+    </div>
+
+
+    <div class="services-grid">
+
+        <div class="service-card">
+
+            <h3>Student Verification</h3>
+
+            <p>
+                Student information और verification details check करें।
+            </p>
+
+            <a
+                href="https://sites.google.com/view/nidhinotes-com/id"
+                class="service-link"
+            >
+                OPEN PORTAL →
+            </a>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <h3>Payment Portal</h3>
+
+            <p>
+                Student fee और payment related services.
+            </p>
+
+            <a
+                href="https://sites.google.com/view/nidhinotes-com/payment"
+                class="service-link"
+            >
+                OPEN PORTAL →
+            </a>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <h3>Tuition Routine</h3>
+
+            <p>
+                Current tuition routine PDF देखें।
+            </p>
+
+            <a
+                href="https://drive.google.com/file/d/1RYbQcrZSZ9SAgqXo2G0E7U72L438zENx/view"
+                target="_blank"
+                class="service-link"
+            >
+                VIEW ROUTINE →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= KNOWLEDGE HUB ================= -->
+
+<section class="section">
+
+    <div class="section-head">
+
+        <div>
+            <div class="section-label">KNOWLEDGE HUB</div>
+            <h2 class="section-title">Explore Knowledge</h2>
+        </div>
+
+    </div>
+
+
+    <div class="knowledge-grid">
+
+        <div class="knowledge-card">
+            <h3>General Knowledge</h3>
+            <p>Important GK questions and facts.</p>
+        </div>
+
+        <div class="knowledge-card">
+            <h3>Current Affairs</h3>
+            <p>Important current events for students.</p>
+        </div>
+
+        <div class="knowledge-card">
+            <h3>India GK</h3>
+            <p>States, capitals, history and geography.</p>
+        </div>
+
+        <div class="knowledge-card">
+            <h3>Bihar GK</h3>
+            <p>Bihar districts, history and important facts.</p>
+        </div>
+
+        <div class="knowledge-card">
+            <h3>Full Forms</h3>
+            <p>Important abbreviations and full forms.</p>
+        </div>
+
+        <div class="knowledge-card">
+            <h3>Science Facts</h3>
+            <p>Interesting and useful science facts.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= JOURNEY ================= -->
+
+<section class="section journey">
+
+    <div class="section-head">
+
+        <div>
+            <div class="section-label">OUR JOURNEY</div>
+            <h2 class="section-title">
+                विद्या निधि की यात्रा
+            </h2>
+        </div>
+
+    </div>
+
+
+    <div class="timeline">
+
+        <div class="timeline-card">
+
+            <div class="timeline-number">01</div>
+
+            <h3>शुरुआत</h3>
+
+            <p>
+                बच्चों को बेहतर और व्यवस्थित तरीके से पढ़ाने के उद्देश्य
+                से विद्या निधि की शुरुआत हुई।
+            </p>
+
+        </div>
+
+
+        <div class="timeline-card">
+
+            <div class="timeline-number">02</div>
+
+            <h3>सीखना</h3>
+
+            <p>
+                Notes, tests और regular practice के माध्यम से learning
+                को मजबूत किया गया।
+            </p>
+
+        </div>
+
+
+        <div class="timeline-card">
+
+            <div class="timeline-number">03</div>
+
+            <h3>Digital विस्तार</h3>
+
+            <p>
+                Digital resources और online student services को जोड़ा गया।
+            </p>
+
+        </div>
+
+
+        <div class="timeline-card">
+
+            <div class="timeline-number">04</div>
+
+            <h3>आगे की दिशा</h3>
+
+            <p>
+                Technology के साथ learning को और सरल और accessible बनाना।
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOUNDER ================= -->
+
+<section class="section">
+
+    <div class="section-head">
+
+        <div>
+            <div class="section-label">FOUNDER</div>
+            <h2 class="section-title">The Vision Behind VIDYA NIDHI</h2>
+        </div>
+
+    </div>
+
+
+    <div class="founder-box">
+
+        <img
+            class="founder-image"
+            src="https://drive.google.com/thumbnail?id=1aNoFgjzeoc36HthiF_guqIGUI7yv-kH7&sz=w500"
+            alt="Founder"
+        >
+
+        <div>
+
+            <h2>ANKUL KR. SAHU</h2>
+
+            <div class="founder-role">
+                FOUNDER • VIDYA NIDHI
+            </div>
+
+            <p>
+                VIDYA NIDHI का उद्देश्य विद्यार्थियों को सरल,
+                व्यवस्थित और practical तरीके से सीखने के लिए एक
+                बेहतर educational environment उपलब्ध कराना है।
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="section contact">
+
+    <div class="contact-grid">
+
+        <div class="contact-info">
+
+            <div class="section-label">
+                CONTACT
+            </div>
+
+            <h2>
+                Get in touch
+            </h2>
+
+            <p>
+                किसी भी enquiry, admission या student related information
+                के लिए हमसे संपर्क करें।
+            </p>
+
+
+            <div class="contact-details">
+
+                <div class="contact-detail">
+                    📧 ankulkumar7286@gmail.com
+                </div>
+
+                <div class="contact-detail">
+                    📞 9123627286
+                </div>
+
+                <div class="contact-detail">
+                    📍 Sirsa Biran, Shaw Tola, 844123,
+                    Lalganj, Vaishali, Bihar
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <form
+            class="contact-form"
+            id="contactForm"
+        >
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>
+                        STUDENT NAME
+                    </label>
+
+                    <input
+                        type="text"
+                        name="studentName"
+                        required
+                        placeholder="Student name"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        PARENT / GUARDIAN
+                    </label>
+
+                    <input
+                        type="text"
+                        name="parentName"
+                        required
+                        placeholder="Parent name"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        MOBILE
+                    </label>
+
+                    <input
+                        type="tel"
+                        name="mobile"
+                        placeholder="Mobile number"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        EMAIL
+                    </label>
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email address"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        CLASS
+                    </label>
+
+                    <select name="class">
+
+                        <option value="">
+                            Select Class
+                        </option>
+
+                        <option>Class 4</option>
+                        <option>Class 5</option>
+                        <option>Class 6</option>
+                        <option>Class 7</option>
+                        <option>Class 8</option>
+                        <option>Class 9</option>
+                        <option>Class 10</option>
+                        <option>Other</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        ENQUIRY TYPE
+                    </label>
+
+                    <select name="enquiry">
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option>Admission</option>
+                        <option>Tuition</option>
+                        <option>Student Information</option>
+                        <option>Fee</option>
+                        <option>Other</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label>
+                        ADDRESS
+                    </label>
+
+                    <input
+                        type="text"
+                        name="address"
+                        placeholder="Address"
+                    >
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label>
+                        MESSAGE
+                    </label>
+
+                    <textarea
+                        name="message"
+                        placeholder="Write your message..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="primary-btn"
+                style="border:0;width:100%;"
+            >
+                SEND ENQUIRY →
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+
+            VIDYA NIDHI
+
+            <span>
+                SMART LEARNING CAMPUS
+            </span>
+
+        </div>
+
+        <div class="footer-copy">
+            © 2026 VIDYA NIDHI. All Rights Reserved.
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= JOURNEY MODAL ================= -->
+
+<div
+    class="modal"
+    id="journeyModal"
+    onclick="outsideClose(event,'journeyModal')"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="close-btn"
+            onclick="closePopup('journeyModal')"
+        >
+            ×
+        </button>
+
+        <h2>
+            विद्या निधि की यात्रा
+        </h2>
+
+        <p>
+            विद्या निधि की शुरुआत विद्यार्थियों को बेहतर learning
+            resources उपलब्ध कराने के उद्देश्य से हुई। समय के साथ
+            notes, tests, results, digital services और student portals
+            को एक ही platform पर जोड़ा गया।
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= NEWS 1 ================= -->
+
+<div
+    class="modal"
+    id="news1Modal"
+    onclick="outsideClose(event,'news1Modal')"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="close-btn"
+            onclick="closePopup('news1Modal')"
+        >
+            ×
+        </button>
+
+        <h2>
+            No New Notification
+        </h2>
+
+        <p>
+            फिलहाल VIDYA NIDHI पर कोई नई notification उपलब्ध नहीं है।
+            नई जानकारी आने पर इसी section में update किया जाएगा।
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= NEWS 2 ================= -->
+
+<div
+    class="modal"
+    id="news2Modal"
+    onclick="outsideClose(event,'news2Modal')"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="close-btn"
+            onclick="closePopup('news2Modal')"
+        >
+            ×
+        </button>
+
+        <h2>
+            Examination Update
+        </h2>
+
+        <p>
+            Examination से जुड़ी महत्वपूर्ण जानकारी, test schedule और
+            updates VIDYA NIDHI के examination section में उपलब्ध कराए
+            जाएंगे।
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= NEWS 3 ================= -->
+
+<div
+    class="modal"
+    id="news3Modal"
+    onclick="outsideClose(event,'news3Modal')"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="close-btn"
+            onclick="closePopup('news3Modal')"
+        >
+            ×
+        </button>
+
+        <h2>
+            Student Verification
+        </h2>
+
+        <p>
+            Student Verification Portal के माध्यम से student details
+            check की जा सकती हैं।
+        </p>
+
+        <br>
+
+        <a
+            href="https://sites.google.com/view/nidhinotes-com/id"
+            class="primary-btn"
+        >
+            OPEN VERIFICATION PORTAL →
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= MENU MODAL ================= -->
+
+<div
+    class="modal"
+    id="menuModal"
+    onclick="outsideClose(event,'menuModal')"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="close-btn"
+            onclick="closePopup('menuModal')"
+        >
+            ×
+        </button>
+
+        <h2>
+            VIDYA NIDHI MENU
+        </h2>
+
+        <div class="menu-list">
+
+            <a
+                class="menu-link"
+                href="https://sites.google.com/view/nidhinotes-com/home"
+            >
+                🏠 Home
+            </a>
+
+            <a
+                class="menu-link"
+                href="https://sites.google.com/view/nidhinotes-com/notes"
+            >
+                📚 Notes
+            </a>
+
+            <a
+                class="menu-link"
+                href="https://sites.google.com/view/nidhinotes-com/test-paper"
+            >
+                📝 Test Papers
+            </a>
+
+            <a
+                class="menu-link"
+                href="https://sites.google.com/view/nidhinotes-com/result"
+            >
+                📊 Results
+            </a>
+
+            <a
+                class="menu-link"
+                href="https://sites.google.com/view/nidhinotes-com/exams"
+            >
+                🎓 Exams
+            </a>
+
+            <a
+                class="menu-link"
+                href="https://sites.google.com/view/nidhinotes-com/id"
+            >
+                🪪 Student Verification
+            </a>
+
+            <a
+                class="menu-link"
+                href="https://sites.google.com/view/nidhinotes-com/payment"
+            >
+                💳 Payment Portal
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   MODALS
+========================= */
+
+function openPopup(id){
+
+    const modal = document.getElementById(id);
+
+    if(modal){
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+    }
+
+}
+
+
+function closePopup(id){
+
+    const modal = document.getElementById(id);
+
+    if(modal){
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+    }
+
+}
+
+
+function outsideClose(event,id){
+
+    if(event.target.id === id){
+        closePopup(id);
+    }
+
+}
+
+
+document.addEventListener("keydown",function(event){
+
+    if(event.key === "Escape"){
+
+        document.querySelectorAll(".modal.active").forEach(function(modal){
+
+            modal.classList.remove("active");
+
+        });
+
+        document.body.style.overflow = "";
+
+    }
+
+});
+
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+const contactForm = document.getElementById("contactForm");
+
+contactForm.addEventListener("submit",function(event){
+
+    event.preventDefault();
+
+    const submitButton = contactForm.querySelector("button");
+
+    submitButton.disabled = true;
+
+    submitButton.innerText = "SENDING...";
+
+    /*
+       IMPORTANT:
+       Yahan apna Google Apps Script Web App URL lagana hai.
+    */
+
+    const scriptURL =
+        "https://script.google.com/macros/s/PASTE_YOUR_DEPLOYMENT_ID_HERE/exec";
+
+
+    fetch(scriptURL,{
+        method:"POST",
+        body:new FormData(contactForm),
+        mode:"no-cors"
+    })
+    .then(function(){
+
+        alert(
+            "Thank you! Your enquiry has been submitted successfully."
+        );
+
+        contactForm.reset();
+
+        submitButton.disabled = false;
+
+        submitButton.innerText = "SEND ENQUIRY →";
+
+    })
+    .catch(function(){
+
+        alert(
+            "Something went wrong. Please try again."
+        );
+
+        submitButton.disabled = false;
+
+        submitButton.innerText = "SEND ENQUIRY →";
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
